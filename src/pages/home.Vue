@@ -36,8 +36,8 @@
                     <span>研究成果</span>
                   </template>
                   <el-menu-item-group>
-                    <el-menu-item index="3-1" >教学成果</el-menu-item>
-                    <el-menu-item index="3-2" >科研成果</el-menu-item>
+                    <el-menu-item index="3-1" style="font-size:8px">教学成果</el-menu-item>
+                    <el-menu-item index="3-2" style="font-size:8px">科研成果</el-menu-item>
                   </el-menu-item-group>
                 </el-submenu>
 
@@ -47,8 +47,8 @@
                     <span>教学科研</span>
                   </template>
                   <el-menu-item-group>
-                    <el-menu-item index="4-1" >授课信息</el-menu-item>
-                    <el-menu-item index="4-2" >科研项目</el-menu-item>
+                    <el-menu-item index="4-1" style="font-size:8px">授课信息</el-menu-item>
+                    <el-menu-item index="4-2" style="font-size:8px">科研项目</el-menu-item>
                   </el-menu-item-group>
                 </el-submenu>
 
@@ -68,18 +68,16 @@
                     <span>关于我们</span>
                   </template>
                   <el-menu-item-group>
-                    <el-menu-item index="7-1" >实验室简介</el-menu-item>
-                    <el-menu-item index="7-2" >师资队伍</el-menu-item>
-                    <el-menu-item index="7-3" >学生信息</el-menu-item>
-                    <el-menu-item index="7-4" >联系我们</el-menu-item>
+                    <el-menu-item index="7-1" style="font-size:8px">实验室简介</el-menu-item>
+                    <el-menu-item index="7-2" style="font-size:8px">师资队伍</el-menu-item>
+                    <el-menu-item index="7-3" style="font-size:8px">学生信息</el-menu-item>
+                    <el-menu-item index="7-4" style="font-size:8px">联系我们</el-menu-item>
                   </el-menu-item-group>
                 </el-submenu>
             </el-menu>
         </el-aside>
         <!-- 页内容 -->
         <el-main>
-          
-          
           <router-view/>
         </el-main>
       </el-container>
@@ -126,7 +124,9 @@ export default {
 </script>
 
 <style>
-
+span{
+  font-size: 10px;
+}
   .el-menu-vertical:not(.el-menu--collapse) {
     width: 200px;
     min-height: 0px;
@@ -140,6 +140,7 @@ export default {
     margin:0;
     height: 100%;
     overflow-y: hidden;
+    background: #f2f2f2;
   }
   .el-header {
     background-color: #363636;
@@ -148,10 +149,7 @@ export default {
     line-height: 60px;
   }
     .el-main {
-    box-shadow: 2px 2px 10px #888888;
-    margin:5px;
-    margin-top: 10px;
-    background-color: #E9EEF3;
+  
     color: #333;
     border-radius: 30px;
     height:890px;
