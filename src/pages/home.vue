@@ -78,7 +78,9 @@
         </el-aside>
         <!-- 页内容 -->
         <el-main>
-          <router-view/>
+          <transition :name="transitionName">
+            <router-view/>
+          </transition>
         </el-main>
       </el-container>
     </el-container>
@@ -92,9 +94,17 @@ export default {
   data(){
     return{
       isCollapse:true,
+      transitionName:'fold-left',
       heiforscorll:0,
     }
   },
+  watch:{'$route' (to,from) {
+      const routerDeep = ['/','/activemessage','/eduachievements','/sciachievements','/teachinfo','/sciproject','/admissioninfo','/intercooperation','/laboratoryintro','/teacherteam','/studentinfo','/contactus']
+      const toDepth = routerDeep.indexOf(to.path);
+      const fromDepth = routerDeep.indexOf(from.path);
+      this.transitionName = toDepth > fromDepth ? 'fold-left' : 'fold-right';
+      console.log(this.transitionName);
+    }},
   mounted: function () {
         window.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮滚动事件
   },
@@ -259,4 +269,84 @@ export default {
     z-index: 999999;
   }
 
+
+
+/* 动画 */
+.fold-left-enter-active {
+    animation-name: fold-left-in;
+    animation-duration: .5s;
+  }
+  .fold-left-leave-active {
+    animation-name: fold-left-out;
+    animation-duration: .5s;
+  }
+  @keyframes fold-left-in {
+    0% {
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      /* visibility: visible; */
+    }
+    /*50% {
+      transform: translate3d(50%, 0, 0);
+    }*/
+    100% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes fold-left-out {
+    0% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    /*50% {
+      transform: translate3d(-50%, 0 , 0);
+    }*/
+    100% {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+      /* visibility: hidden; */
+    }
+  }
+
+  .fold-right-enter-active {
+    animation-name: fold-right-in;
+    animation-duration: .5s;
+  }
+  .fold-right-leave-active {
+    animation-name: fold-right-out;
+    animation-duration: .5s;
+  }
+  @keyframes fold-right-in{
+    0% {
+      width: 100%;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+      /* visibility: visible; */
+    }
+    /*50% {
+      transform: translate3d(50%, 0, 0);
+    }*/
+    100% {
+      width: 100%;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes fold-right-out  {
+    0% {
+      width: 100%;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    /*50% {
+      transform: translate3d(-50%, 0 , 0);
+    }*/
+    100% {
+      width: 100%;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+      /* visibility: hidden; */
+    }
+  }
 </style>

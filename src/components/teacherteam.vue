@@ -13,5 +13,7 @@ export default {
 </script>
 
 <style>
-
+#teacherteam{
+  position: absolute;
+}
 </style>

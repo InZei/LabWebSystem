@@ -140,9 +140,7 @@ export default {
   font-size: 18px;
 }
 
-sciachievements
-{
-  padding:0; 
-  margin:0;
+#sciachievements{
+  position: absolute;
 }
 </style>

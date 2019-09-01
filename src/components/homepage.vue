@@ -54,6 +54,9 @@ export default {
 </script>
 
 <style>
+#homepage{
+  position:absolute;
+}
   .titleforwelcome{
     font-size: 50px;
     font-weight: 500;

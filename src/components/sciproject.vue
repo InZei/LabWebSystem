@@ -129,6 +129,9 @@ export default {
 </script>
 
 <style>
+#sciproject{
+  position: absolute;
+}
 .el-table{
   font-size: 18px;
   font-weight: bolder;
@@ -140,9 +143,5 @@ export default {
   font-size: 18px;
 }
 
-sciproject
-{
-  padding:0; 
-  margin:0;
-}
+
 </style>

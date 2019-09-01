@@ -1,19 +1,19 @@
 <template>
   <div id="laboratoryintro">
       
-    <img src="../../static/asserts/pic/BITlogo.png" style="margin-top:100px;opacity:0.8;" width="30%">
+    <img src="../../static/asserts/pic/BITlogo.png" style="margin-top:100px;opacity:0.8;border-radius:50%;box-shadow: 0px 0px 10px #FFFFFF;" width="25%">
     <div style="width:100%;">
         <h1 style="font-weight:100;font-size:30px;color:#EEEEEE;">实验室所属院校：北京理工大学</h1>
         <p style="width:50%;color:#EEEEEE;margin-left:25%;font-weight:100;font-size:16px;">北京理工大学是中国共产党创办的第一所理工科大学,学校前身是1940年成立于延安的自然科学院，历经晋察冀边区工业专门学校、华北大学工学院等办学时期，1949年定址北京,并接收中法大学校本部和数理化三个系，1952年定名为北京工业学院，1988年更名为北京理工大学。</p>
         <p id="link">了解更多 ></p>
     </div>
-    <img src="../../static/asserts/pic/labintro1.png" style="margin-top:100px;opacity:0.8;" width="30%">
+    <img src="../../static/asserts/pic/labintro1.png" style="margin-top:100px;opacity:0.8;" width="25%">
         <div style="width:100%;">
         <h1 style="font-weight:100;font-size:30px;color:#EEEEEE;">实验室所属院校：北京理工大学</h1>
         <p style="width:50%;color:#EEEEEE;margin-left:25%;font-weight:100;font-size:16px;">北京理工大学是中国共产党创办的第一所理工科大学,学校前身是1940年成立于延安的自然科学院，历经晋察冀边区工业专门学校、华北大学工学院等办学时期，1949年定址北京,并接收中法大学校本部和数理化三个系，1952年定名为北京工业学院，1988年更名为北京理工大学。</p>
         <p id="link">了解更多 ></p>
     </div>
-    <img src="../../static/asserts/pic/labintro2.png" style="margin-top:100px;opacity:0.8;" width="30%">
+    <img src="../../static/asserts/pic/labintro2.png" style="margin-top:100px;opacity:0.8;" width="35%">
         <div style="width:100%;">
         <h1 style="font-weight:100;font-size:30px;color:#EEEEEE;">领导班子</h1>
         <p style="width:50%;color:#EEEEEE;margin-left:25%;font-weight:100;font-size:16px;">谁谁谁带领实验室</p>
@@ -47,6 +47,12 @@
             </el-col>
         </el-row>
     </div>
+    <img src="../../static/asserts/pic/place.jpg" style="margin-top:100px;opacity:1;" width="80%">
+    <div style="width:100%;">
+        <h1 style="font-weight:100;font-size:30px;color:#EEEEEE;">实验室所属院校：北京理工大学</h1>
+        <p style="width:50%;color:#EEEEEE;margin-left:25%;font-weight:100;font-size:16px;">北京理工大学是中国共产党创办的第一所理工科大学,学校前身是1940年成立于延安的自然科学院，历经晋察冀边区工业专门学校、华北大学工学院等办学时期，1949年定址北京,并接收中法大学校本部和数理化三个系，1952年定名为北京工业学院，1988年更名为北京理工大学。</p>
+        <p id="link">了解更多 ></p>
+    </div>
   </div>
 </template>
 
@@ -72,6 +78,7 @@ export default {
     font-size: 19px;
 }
 #laboratoryintro{
+    position: absolute;
     width: 100%;
     background: #000000;
     height: 5000px;

@@ -129,6 +129,9 @@ export default {
 </script>
 
 <style>
+#admissioninfo{
+  position: absolute;
+}
 .el-table{
   font-size: 18px;
   font-weight: bolder;

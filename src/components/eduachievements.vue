@@ -129,6 +129,9 @@ export default {
 </script>
 
 <style>
+#eduachievements{
+  position: absolute;
+}
 .el-table{
   font-size: 18px;
   font-weight: bolder;
@@ -140,9 +143,4 @@ export default {
   font-size: 18px;
 }
 
-eduachievements
-{
-  padding:0; 
-  margin:0;
-}
 </style>

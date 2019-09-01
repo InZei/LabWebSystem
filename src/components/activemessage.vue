@@ -135,6 +135,10 @@ export default {
 </script>
 
 <style>
+#activemessage{
+  position:absolute;
+  text-align: center;
+}
 .el-table{
   font-size: 18px;
   font-weight: bolder;
@@ -146,9 +150,5 @@ export default {
   font-size: 18px;
 }
 
-activemessage
-{
-  padding:0; 
-  margin:0;
-}
+
 </style>

@@ -13,5 +13,7 @@ export default {
 </script>
 
 <style>
-
+#studentinfo{
+  position: absolute;
+}
 </style>

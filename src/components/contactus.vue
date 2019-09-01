@@ -13,5 +13,7 @@ export default {
 </script>
 
 <style>
-
+#contactus{
+  position: absolute;
+}
 </style>
