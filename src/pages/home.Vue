@@ -36,8 +36,8 @@
                     <span>研究成果</span>
                   </template>
                   <el-menu-item-group>
-                    <el-menu-item index="3-1" style="font-size:8px">教学成果</el-menu-item>
-                    <el-menu-item index="3-2" style="font-size:8px">科研成果</el-menu-item>
+                    <el-menu-item index="3-1" style="font-size:8px" @click="toeduachievements">教学成果</el-menu-item>
+                    <el-menu-item index="3-2" style="font-size:8px" @click="tosciachievements">科研成果</el-menu-item>
                   </el-menu-item-group>
                 </el-submenu>
 
@@ -47,17 +47,17 @@
                     <span>教学科研</span>
                   </template>
                   <el-menu-item-group>
-                    <el-menu-item index="4-1" style="font-size:8px">授课信息</el-menu-item>
-                    <el-menu-item index="4-2" style="font-size:8px">科研项目</el-menu-item>
+                    <el-menu-item index="4-1" style="font-size:8px" @click="toteachinfo">授课信息</el-menu-item>
+                    <el-menu-item index="4-2" style="font-size:8px" @click="tosciproject">科研项目</el-menu-item>
                   </el-menu-item-group>
                 </el-submenu>
 
-                <el-menu-item index="5">
+                <el-menu-item index="5" @click="toadmissioninfo">
                   <i class="el-icon-s-data"></i>
                   <span slot="title">招生消息</span>
                 </el-menu-item>
 
-                <el-menu-item index="6">
+                <el-menu-item index="6" @click="tointercooperation">
                   <i class="el-icon-s-check"></i>
                   <span slot="title">国际合作</span>
                 </el-menu-item>
@@ -68,10 +68,10 @@
                     <span>关于我们</span>
                   </template>
                   <el-menu-item-group>
-                    <el-menu-item index="7-1" style="font-size:8px">实验室简介</el-menu-item>
-                    <el-menu-item index="7-2" style="font-size:8px">师资队伍</el-menu-item>
-                    <el-menu-item index="7-3" style="font-size:8px">学生信息</el-menu-item>
-                    <el-menu-item index="7-4" style="font-size:8px">联系我们</el-menu-item>
+                    <el-menu-item index="7-1" style="font-size:8px"  @click="tolaboratoryintro">实验室简介</el-menu-item>
+                    <el-menu-item index="7-2" style="font-size:8px" @click="toteacherteam">师资队伍</el-menu-item>
+                    <el-menu-item index="7-3" style="font-size:8px" @click="tostudentinfo" >学生信息</el-menu-item>
+                    <el-menu-item index="7-4" style="font-size:8px" @click="tocontactus">联系我们</el-menu-item>
                   </el-menu-item-group>
                 </el-submenu>
             </el-menu>
@@ -99,6 +99,51 @@ export default {
         window.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮滚动事件
   },
   methods: {
+    toeduachievements(){
+      this.$router.push({
+        path:'/eduachievements',
+      })
+    },
+    tosciachievements(){
+      this.$router.push({
+        path:'/sciachievements',
+      })
+    },
+    toteachinfo(){
+      this.$router.push({
+        path:'/teachinfo',
+      })
+    },
+    tosciproject(){
+      this.$router.push({
+        path:'/sciproject',
+      })
+    },
+    toadmissioninfo(){
+      this.$router.push({
+        path:'/admissioninfo',
+      })
+    },
+    tointercooperation(){
+      this.$router.push({
+        path:'/intercooperation',
+      })
+    },
+    tocontactus(){
+      this.$router.push({
+        path:'/contactus',
+      })
+    },
+    tostudentinfo(){
+      this.$router.push({
+        path:'studentinfo',
+      })
+    },
+    toteacherteam(){
+      this.$router.push({
+        path:'teacherteam',
+      })
+    },
     tohome(){
       this.$router.push({
         path:'/',
@@ -109,6 +154,11 @@ export default {
         path:'/activemessage',
       })
     },
+    tolaboratoryintro(){
+      this.$router.push({
+        path:'/laboratoryintro',
+      })
+    },  
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },
@@ -132,7 +182,7 @@ export default {
                 document.getElementById("head").style.opacity="1";
             }
             else{
-                document.getElementById("head").style.opacity="0.9";
+                document.getElementById("head").style.opacity="0.7";
             }
             if(scroll<0){
                 // this.$refs.aside.left='-200px';
@@ -167,16 +217,17 @@ export default {
     padding:0; 
     margin:0;
     height: 100%;
-   
-    background: #f2f2f2;
+    
+    background: #ffffff;
   }
   .el-header {
     position: fixed;
     left:0px;
     top:0px;
-    background-color: #363636;
+    z-index: 9999;
+    background-color: #000000;
     color: #333;
-    box-shadow: 2px 2px 10px #252525;
+    box-shadow: 2px 2px 10px #000000;
     line-height: 60px;
     width: 100%;
     transition: 0.5s;
@@ -184,9 +235,11 @@ export default {
     .el-main {
     width: 100%;
     color: #333;
+    margin:0;
+    padding:0;
     text-align: center;
     padding-top: 80px;
-    height: 10000px;
+    height: 5000px;
   }
   
   .el-aside {
@@ -195,7 +248,7 @@ export default {
     top: 65px;
     opacity:0.618;
     border-radius: 30px;
-    box-shadow: 2px 2px 10px #757575;
+    box-shadow: 2px 2px 10px #000000;
     margin:5px;
     margin-top: 10px;
     margin-right: 10px; 

@@ -1,12 +1,11 @@
 <template>
-  <div id="activemessage">
+  <div id="eduachievements">
       <el-table
-      @row-click="tohome"
       :data="tableData.slice((currentPage1-1)*pagesize,currentPage1*pagesize)"
       style="width: 100%">
       <el-table-column
         prop="date"
-        label="动态消息"
+        label="教学成果"
         width="1200">
       </el-table-column>
       <el-table-column
@@ -32,7 +31,7 @@
 <script>
 
 export default {
-  name: 'activemessage',
+  name: 'eduachievements',
    data() {
         return {
           pagesize:10,
@@ -119,11 +118,6 @@ export default {
         }
       },
     methods: {
-      tohome(){
-      this.$router.push({
-        path:'/',
-      })
-    },
       handleCurrentChange(currentPage1) {
         this.currentPage1=currentPage1;
       },
@@ -146,7 +140,7 @@ export default {
   font-size: 18px;
 }
 
-activemessage
+eduachievements
 {
   padding:0; 
   margin:0;
