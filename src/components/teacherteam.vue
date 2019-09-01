@@ -1,6 +1,6 @@
 <template>
   <div id="teacherteam">
-    contactus
+    teacherteam
   </div>
 </template>
 

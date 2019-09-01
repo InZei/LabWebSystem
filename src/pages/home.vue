@@ -120,7 +120,7 @@ export default {
       })
     },
     toteacherteam(){
-      this.$$router.push({
+      this.$router.push({
         path:'teacherteam',
       })
     },
