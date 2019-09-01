@@ -2,14 +2,14 @@
   <div id="home">
     <el-container>
       <!-- 头部 -->
-      <el-header>
+      <el-header id="head">
         <el-button type="primary" round style="float:right;margin:10px;">登录</el-button>
       </el-header>
 
 
       <el-container>
         <!-- 导航栏 -->
-        <el-aside width="auto">
+        <el-aside width="auto" ref="aside" id="aside">
             <el-menu background-color="#44494e"
               text-color="#fff"
               active-text-color="#999999" 
@@ -91,8 +91,12 @@ export default {
   name: 'home',
   data(){
     return{
-      isCollapse:false
+      isCollapse:true,
+      heiforscorll:0,
     }
+  },
+  mounted: function () {
+        window.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮滚动事件
   },
   methods: {
     tohome(){
@@ -118,20 +122,44 @@ export default {
       else{
         this.isCollapse=true;
       }
+    },
+    handleScroll: function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 
+                      document.body.scrollTop
+            var scroll = scrollTop - this.heiforscorll;
+            this.heiforscorll = scrollTop;
+            if(this.heiforscorll==0){
+                document.getElementById("head").style.opacity="1";
+            }
+            else{
+                document.getElementById("head").style.opacity="0.9";
+            }
+            if(scroll<0){
+                // this.$refs.aside.left='-200px';
+                document.getElementById("aside").style.left='10px';
+            }else{
+                // this.$refs.aside.left='10px';
+                document.getElementById("aside").style.left='-220px';
+            }
     }
+  },
+  destroyed: function () {
+        window.removeEventListener('scroll', this.handleScroll);   //  离开页面清除（移除）滚轮滚动事件
   }
 }
 </script>
 
 <style>
-span{
-  font-size: 10px;
-}
+  span{
+    font-size: 10px;
+  }
   .el-menu-vertical:not(.el-menu--collapse) {
     width: 200px;
     min-height: 0px;
   }
-
+  body::-webkit-scrollbar {
+    display: none;
+  }
   html,
   body{
     font-weight:100;
@@ -139,24 +167,33 @@ span{
     padding:0; 
     margin:0;
     height: 100%;
-    overflow-y: hidden;
+   
     background: #f2f2f2;
   }
   .el-header {
+    position: fixed;
+    left:0px;
+    top:0px;
     background-color: #363636;
     color: #333;
     box-shadow: 2px 2px 10px #252525;
     line-height: 60px;
+    width: 100%;
+    transition: 0.5s;
   }
     .el-main {
-  
+    width: 100%;
     color: #333;
-    border-radius: 30px;
-    height:890px;
-   
+    padding-left: 300px;
+    padding-top: 80px;
+    height: 10000px;
   }
   
   .el-aside {
+    position: fixed;
+    left: 10px;
+    top: 65px;
+    opacity:0.618;
     border-radius: 30px;
     box-shadow: 2px 2px 10px #757575;
     margin:5px;
@@ -165,8 +202,8 @@ span{
     overflow-x: hidden;
     background-color: #44494e;
     color: #333;
-    
-    height: 100%;
+    transition: 0.3s;
+    z-index: 999999;
   }
 
 </style>
