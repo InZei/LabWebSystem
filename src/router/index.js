@@ -13,6 +13,7 @@ import teachinfo from '../components/teachinfo'
 import sciproject from '../components/sciproject'
 import admissioninfo from '../components/admissioninfo'
 import intercooperation from '../components/intercooperation'
+import readmessage from '../components/readmessage'
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +30,10 @@ export default new Router({
         {
             path:'/activemessage',
             component:activemessage
+        },
+        {
+          path:'/readmessage',
+          component:readmessage
         },
         {
             path:'/laboratoryintro',
