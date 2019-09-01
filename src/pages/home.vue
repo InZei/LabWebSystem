@@ -69,9 +69,9 @@
                   </template>
                   <el-menu-item-group>
                     <el-menu-item index="7-1" style="font-size:8px">实验室简介</el-menu-item>
-                    <el-menu-item index="7-2" style="font-size:8px">师资队伍</el-menu-item>
-                    <el-menu-item index="7-3" style="font-size:8px">学生信息</el-menu-item>
-                    <el-menu-item index="7-4" style="font-size:8px">联系我们</el-menu-item>
+                    <el-menu-item index="7-2" @click="toteacherteam" style="font-size:8px">师资队伍</el-menu-item>
+                    <el-menu-item index="7-3" @click="tostudentinfo" style="font-size:8px">学生信息</el-menu-item>
+                    <el-menu-item index="7-4" @click="tocontactus" style="font-size:8px">联系我们</el-menu-item>
                   </el-menu-item-group>
                 </el-submenu>
             </el-menu>
@@ -107,6 +107,21 @@ export default {
     toactivemessage(){
       this.$router.push({
         path:'/activemessage',
+      })
+    },
+    tocontactus(){
+      this.$router.push({
+        path:'/contactus',
+      })
+    },
+    tostudentinfo(){
+      this.$router.push({
+        path:'studentinfo',
+      })
+    },
+    toteacherteam(){
+      this.$$router.push({
+        path:'teacherteam',
       })
     },
     handleOpen(key, keyPath) {
