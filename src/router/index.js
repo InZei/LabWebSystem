@@ -6,6 +6,12 @@ import homepage from '../components/homepage'
 import contactus from '../components/contactus'
 import teacherteam from '../components/teacherteam'
 import studentinfo from '../components/studentinfo'
+import eduachievements from '../components/eduachievements'
+import sciachievements from '../components/sciachievements'
+import teachinfo from '../components/teachinfo'
+import sciproject from '../components/sciproject'
+import admissioninfo from '../components/admissioninfo'
+import intercooperation from '../components/intercooperation'
 Vue.use(Router)
 
 export default new Router({
@@ -22,6 +28,30 @@ export default new Router({
         {
             path:'/activemessage',
             component:activemessage
+        },
+        {
+            path:'/eduachievements',
+            component:eduachievements
+        },
+        {
+          path:'/sciachievements',
+          component:sciachievements
+        },
+        {
+        path:'/teachinfo',
+        component:teachinfo
+        },
+        {
+          path:'/sciproject',
+          component:sciproject
+        },
+        {
+          path:'/admissioninfo',
+          component:admissioninfo
+        },
+        {
+          path:'/intercooperation',
+          component:intercooperation
         },
         {
           path:'/contactus',

@@ -36,8 +36,8 @@
                     <span>研究成果</span>
                   </template>
                   <el-menu-item-group>
-                    <el-menu-item index="3-1" style="font-size:8px">教学成果</el-menu-item>
-                    <el-menu-item index="3-2" style="font-size:8px">科研成果</el-menu-item>
+                    <el-menu-item index="3-1" style="font-size:8px" @click="toeduachievements">教学成果</el-menu-item>
+                    <el-menu-item index="3-2" style="font-size:8px" @click="tosciachievements">科研成果</el-menu-item>
                   </el-menu-item-group>
                 </el-submenu>
 
@@ -47,17 +47,17 @@
                     <span>教学科研</span>
                   </template>
                   <el-menu-item-group>
-                    <el-menu-item index="4-1" style="font-size:8px">授课信息</el-menu-item>
-                    <el-menu-item index="4-2" style="font-size:8px">科研项目</el-menu-item>
+                    <el-menu-item index="4-1" style="font-size:8px" @click="toteachinfo">授课信息</el-menu-item>
+                    <el-menu-item index="4-2" style="font-size:8px" @click="tosciproject">科研项目</el-menu-item>
                   </el-menu-item-group>
                 </el-submenu>
 
-                <el-menu-item index="5">
+                <el-menu-item index="5" @click="toadmissioninfo">
                   <i class="el-icon-s-data"></i>
                   <span slot="title">招生消息</span>
                 </el-menu-item>
 
-                <el-menu-item index="6">
+                <el-menu-item index="6" @click="tointercooperation">
                   <i class="el-icon-s-check"></i>
                   <span slot="title">国际合作</span>
                 </el-menu-item>
@@ -107,6 +107,36 @@ export default {
     toactivemessage(){
       this.$router.push({
         path:'/activemessage',
+      })
+    },
+    toeduachievements(){
+      this.$router.push({
+        path:'/eduachievements',
+      })
+    },
+    tosciachievements(){
+      this.$router.push({
+        path:'/sciachievements',
+      })
+    },
+    toteachinfo(){
+      this.$router.push({
+        path:'/teachinfo',
+      })
+    },
+    tosciproject(){
+      this.$router.push({
+        path:'/sciproject',
+      })
+    },
+    toadmissioninfo(){
+      this.$router.push({
+        path:'/admissioninfo',
+      })
+    },
+    tointercooperation(){
+      this.$router.push({
+        path:'/intercooperation',
       })
     },
     tocontactus(){
@@ -195,6 +225,7 @@ export default {
     line-height: 60px;
     width: 100%;
     transition: 0.5s;
+    z-index: 999999;
   }
     .el-main {
     width: 100%;
