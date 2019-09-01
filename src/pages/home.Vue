@@ -18,8 +18,8 @@
               @open="handleOpen" 
               @close="handleClose" 
               :collapse="isCollapse" style="border-right:0px;">
-              <i class="el-icon-back" style="font-size:30px;margin:15px;color:#888888;" @click="isCollapseChange" v-if="!isCollapse"></i>
-              <i class="el-icon-right" style="font-size:30px;margin:15px;color:#888888;" @click="isCollapseChange" v-if="isCollapse"></i>
+              <i class="el-icon-back" style="font-size:30px;margin:15px;color:#888888;cursor: pointer;" @click="isCollapseChange" v-if="!isCollapse"></i>
+              <i class="el-icon-right" style="font-size:30px;margin:15px;color:#888888;cursor: pointer;" @click="isCollapseChange" v-if="isCollapse"></i>
                 <el-menu-item index="1"  @click="tohome" style="border:none">
                   <i class="el-icon-s-home"></i>
                   <span slot="title">首页</span>
@@ -184,7 +184,7 @@ export default {
     .el-main {
     width: 100%;
     color: #333;
-    padding-left: 300px;
+    text-align: center;
     padding-top: 80px;
     height: 10000px;
   }
