@@ -103,16 +103,19 @@ export default {
       const toDepth = routerDeep.indexOf(to.path);
       const fromDepth = routerDeep.indexOf(from.path);
       this.transitionName = toDepth > fromDepth ? 'fold-left' : 'fold-right';
-      console.log(this.transitionName);
+      window.scrollTo(0,0);
+      
     }},
   mounted: function () {
+        
         window.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮滚动事件
   },
   methods: {
     toeduachievements(){
       this.$router.push({
         path:'/eduachievements',
-      })
+      });
+      
     },
     tosciachievements(){
       this.$router.push({
@@ -155,6 +158,7 @@ export default {
       })
     },
     tohome(){
+
       this.$router.push({
         path:'/',
       })

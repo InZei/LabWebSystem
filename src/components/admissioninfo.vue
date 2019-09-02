@@ -2,19 +2,17 @@
   <div id="admissioninfo">
       <el-table
       :data="tableData.slice((currentPage1-1)*pagesize,currentPage1*pagesize)"
+      stripe
       style="width: 100%">
       <el-table-column
         prop="date"
-        label="招生消息"
-        width="1200">
+        label="动态消息"
+        stripe
+        width="1000">
       </el-table-column>
       <el-table-column
         prop="name"
         label="日期">
-      </el-table-column>
-      <el-table-column
-        prop="address"
-        label="部门">
       </el-table-column>
     </el-table>
 
@@ -22,7 +20,7 @@
       @current-change="handleCurrentChange"
       :current-page="currentPage1"
       :page-size="pagesize"
-      layout="total,prev, pager, next,jumper"
+      layout="prev, pager, next"
       :total="tableData.length">
     </el-pagination>
   </div>
@@ -34,7 +32,7 @@ export default {
   name: 'admissioninfo',
    data() {
         return {
-          pagesize:10,
+          pagesize:16,
           currentPage1:1,
           tableData: [{
             date: '2016-05-02',
@@ -130,7 +128,12 @@ export default {
 
 <style>
 #admissioninfo{
-  position: absolute;
+  position:absolute;
+  text-align: center;
+  float: left;
+  width: 60%;
+  padding: 0;
+  margin-left: 17%;
 }
 .el-table{
   font-size: 18px;

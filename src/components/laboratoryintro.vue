@@ -1,7 +1,7 @@
 <template>
   <div id="laboratoryintro">
       
-    <img src="../../static/asserts/pic/BITlogo.png" style="margin-top:100px;opacity:0.8;border-radius:50%;box-shadow: 0px 0px 10px #FFFFFF;" width="25%">
+    <img src="../../static/asserts/pic/BITlogo.png" style="margin-top:100px;opacity:0.8;border-radius:50%;box-shadow: 0px 0px 10px #FFFFFF;" width="20%">
     <div style="width:100%;">
         <h1 style="font-weight:100;font-size:30px;color:#EEEEEE;">实验室所属院校：北京理工大学</h1>
         <p style="width:50%;color:#EEEEEE;margin-left:25%;font-weight:100;font-size:16px;">北京理工大学是中国共产党创办的第一所理工科大学,学校前身是1940年成立于延安的自然科学院，历经晋察冀边区工业专门学校、华北大学工学院等办学时期，1949年定址北京,并接收中法大学校本部和数理化三个系，1952年定名为北京工业学院，1988年更名为北京理工大学。</p>
