@@ -3,7 +3,36 @@
     <el-container>
       <!-- 头部 -->
       <el-header id="head">
-        <el-button type="primary" round style="float:right;margin:10px;">登录</el-button>
+        <el-button type="primary" round style="float:right;margin:10px;" @click="tologin" v-if="islogin">登录</el-button>
+        <div @click="drawerchange">
+          <el-avatar  class="headimg" style="float:right;margin:10px;" v-if="!islogin">章</el-avatar>
+        </div>
+        <el-drawer
+          class="drawer"
+          title="用户中心"
+          :visible.sync="drawer"
+          :direction="direction"
+          style="z-index:9999!important;"
+          >
+          <div style="margin-left:15px;">
+            <el-button type="primary" round >修改个人信息</el-button>
+            <el-button type="success" round @click="towritemail">发送消息</el-button>
+            <el-button type="warning" round @click="signout">注销</el-button>
+          </div>
+          <div id="rivmsg" v-for="item in 10" :key="item">
+            <el-row>
+             
+              <el-col :span="24"><div > <div id="rivmsgfrom">螺旋爆炸<i class="el-icon-close" id="closeicon"></i></div>
+              <el-divider></el-divider>
+            <div id="rivmsgwhat">hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</div></div></el-col>
+            </el-row>
+           
+          </div>
+
+          
+
+        </el-drawer>
+
       </el-header>
 
 
@@ -81,9 +110,11 @@
           <transition :name="transitionName">
             <router-view/>
           </transition>
+                  
         </el-main>
       </el-container>
     </el-container>
+    
   </div>
 </template>
 
@@ -93,6 +124,8 @@ export default {
   name: 'home',
   data(){
     return{
+      islogin:false,
+      drawer: false,
       isCollapse:true,
       transitionName:'fold-left',
       heiforscorll:0,
@@ -111,6 +144,10 @@ export default {
         window.addEventListener('scroll', this.handleScroll, true);  // 监听（绑定）滚轮滚动事件
   },
   methods: {
+    drawerchange(){
+      console.log(1);
+      this.drawer=true;
+    },
     toeduachievements(){
       this.$router.push({
         path:'/eduachievements',
@@ -122,10 +159,21 @@ export default {
         path:'/sciachievements',
       })
     },
+    signout(){
+      this.islogin=true;
+      this.tohome();
+      this.drawer=false;
+    },
     toteachinfo(){
       this.$router.push({
         path:'/teachinfo',
       })
+    },
+    towritemail(){
+      this.$router.push({
+        path:'/writemail',
+      })
+      this.drawer=false;
     },
     tosciproject(){
       this.$router.push({
@@ -161,6 +209,12 @@ export default {
 
       this.$router.push({
         path:'/',
+      })
+    },
+    tologin(){
+
+      this.$router.push({
+        path:'/login',
       })
     },
     toactivemessage(){
@@ -214,6 +268,65 @@ export default {
 </script>
 
 <style>
+#closeicon{
+  float: right;
+  margin-right:10px;
+  line-height: 50px;
+}
+#rivmsgfrom{
+  font-size: 30px;
+  line-height: 50px; 
+  margin-top:10px;
+  height:60px; 
+  width:100%;
+}
+#rivmsgwhat{
+  font-size: 20px;
+  width:100%;
+  line-height: 30px;
+  word-break:break-all;
+}
+#rivmsg{
+  border-radius: 40px;
+  margin-top:20px;
+  margin-bottom: 20px;
+  margin-left:2.5%;
+  background: #c0c0c0;
+  box-shadow: 2px 2px 10px #555555;
+  padding:10px;
+  width: 95%;
+}
+.el-drawer__header{
+  font-size: 30px!important;
+}
+
+.el-drawer{
+  background: #ffffff;
+  overflow: auto;
+  opacity: 0.818;
+  height: 100%!important;
+}
+
+  .drawer::-webkit-scrollbar {
+      display: none;
+    }
+  .el-drawer::-webkit-scrollbar {
+      display: none;
+    }
+  .drawer{
+    height: 100% !important;
+  }
+.el-drawer__body{
+  height: 500px !important;
+}
+.headimg{
+  background: #309bff;
+  transition: 1s;
+  cursor: pointer;
+}
+.headimg:active{
+  background: #046cf5;
+}
   span{
     font-size: 10px;
   }
@@ -231,14 +344,13 @@ export default {
     padding:0; 
     margin:0;
     height: 100%;
-    
     background: #ffffff;
   }
   .el-header {
     position: fixed;
     left:0px;
     top:0px;
-    z-index: 9999;
+    z-index: 99;
     background-color: #000000;
     color: #333;
     box-shadow: 2px 2px 10px #000000;
@@ -253,7 +365,7 @@ export default {
     padding:0;
     text-align: center;
     padding-top: 80px;
-    height: 5000px;
+    height: 100%;
   }
   
   .el-aside {

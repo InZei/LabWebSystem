@@ -14,6 +14,11 @@ import sciproject from '../components/sciproject'
 import admissioninfo from '../components/admissioninfo'
 import intercooperation from '../components/intercooperation'
 import readmessage from '../components/readmessage'
+import login from '../pages/login'
+import adminusermanagement from '../components/adminusermanagement'
+import adminadduser from '../components/adminadduser'
+import adminqueryuser from '../components/adminqueryuser'
+import writemail from '../components/writemail'
 Vue.use(Router)
 
 export default new Router({
@@ -28,8 +33,12 @@ export default new Router({
           component:homepage
         },
         {
-            path:'/activemessage',
-            component:activemessage
+            path:'/writemail',
+            component:writemail
+        },
+        {
+          path:'/activemessage',
+          component:activemessage
         },
         {
           path:'/readmessage',
@@ -74,8 +83,26 @@ export default new Router({
       {
         path:'/studentinfo',
         component:studentinfo
+      },
+      {
+        path:'/adminusermanagement',
+        component:adminusermanagement,
+      },
+      {
+        path:'/adminadduser',
+        component:adminadduser,
+      },
+      {
+        path:'/adminqueryuser',
+        component:adminqueryuser,
       }
+
       ]
+    },
+    {
+      path:'/login',
+      name:'login',
+      component:login,
     }
   ]
 })
