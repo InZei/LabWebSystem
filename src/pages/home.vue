@@ -16,6 +16,7 @@
           >
           <div style="margin-left:15px;">
             <el-button type="primary" round >修改个人信息</el-button>
+            <el-button round  @click="tochangepsd">修改密码</el-button>
             <el-button type="success" round @click="towritemail">发送消息</el-button>
             <el-button type="warning" round @click="signout">注销</el-button>
           </div>
@@ -147,6 +148,12 @@ export default {
     drawerchange(){
       console.log(1);
       this.drawer=true;
+    },
+    tochangepsd(){
+      this.$router.push({
+        path:'/changepsd',
+      });
+      this.drawer=false;
     },
     toeduachievements(){
       this.$router.push({

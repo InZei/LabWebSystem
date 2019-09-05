@@ -18,13 +18,13 @@
 
     <el-row>
       <el-col :offset="4" :span="8">
-        <img src="../../static/asserts/pic/110.jpg" class="link1" style="margin-top:60px;opacity:0.8;border-radius:50%;box-shadow: 0px 0px 10px #FFFFFF;" width="50%" @click="toadminadduser">
+       <!-- <i class="el-icon-plus"></i> -->
         <div style="width:100%;margin-top:40px;margin-bottom:60px;">
         <span class="link1" style="font-weight:100;font-size:30px;font-weight:bolder;color:#000;" @click="toadminadduser">添加新用户</span>
         </div>
         </el-col>
         <el-col :span="8">
-        <img src="../../static/asserts/pic/110.jpg" class="link1" style="margin-top:60px;opacity:0.8;border-radius:50%;box-shadow: 0px 0px 10px #FFFFFF;" width="50%" @click="toadminqueryuser">
+        <!-- <img src="../../static/asserts/pic/110.jpg" class="link1" style="margin-top:60px;opacity:0.8;border-radius:50%;box-shadow: 0px 0px 10px #FFFFFF;" width="50%" @click="toadminqueryuser"> -->
         <div style="width:100%;margin-top:40px;margin-bottom:60px;">
         <span class="link1" style="font-weight:100;font-size:30px;font-weight:bolder;color:#000;" @click="toadminqueryuser">查询用户</span>
         </div>
@@ -63,7 +63,7 @@ export default {
 
 <style>
 .el-input{
-  
+
 }
 .con{
     width: 60%;

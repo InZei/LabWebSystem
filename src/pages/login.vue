@@ -79,7 +79,7 @@ export default {
     position: fixed;
     left:0px;
     top:0px;
-    z-index: 9999;
+    z-index: 999;
     background-color: #000000;
     box-shadow: 2px 2px 10px #000000;
     line-height: 60px;
