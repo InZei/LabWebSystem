@@ -19,7 +19,7 @@
               
               <p style="font-size:20px;">*初始密码值为123456</p>
 
-              <el-button class="loginbutton">登&nbsp&nbsp&nbsp录</el-button>
+              <el-button class="loginbutton" @click="test">登&nbsp&nbsp&nbsp录</el-button>
             </el-col>
           </el-row>
         </el-main>
@@ -35,7 +35,10 @@
 </template>
 
 <script>
-
+import Vue from 'vue'
+import axios from 'axios'
+import Vueaxios from 'vue-axios'
+Vue.use(Vueaxios,axios)
 export default {
   name: 'home',
     data(){
@@ -45,6 +48,12 @@ export default {
       }
     },
     methods: {
+    test(){
+      Vue.axios.get('/api/user/test').then(
+        function(res){
+          console.log(res);
+        });
+    },
     tohome(){
 
       this.$router.push({

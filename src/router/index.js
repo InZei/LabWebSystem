@@ -18,8 +18,6 @@ import login from '../pages/login'
 import adminusermanagement from '../components/adminusermanagement'
 import adminadduser from '../components/adminadduser'
 import adminqueryuser from '../components/adminqueryuser'
-import writemail from '../components/writemail'
-import changepsd from '../components/changepsd'
 Vue.use(Router)
 
 export default new Router({
@@ -34,16 +32,8 @@ export default new Router({
           component:homepage
         },
         {
-          path:"/changepsd",
-          component:changepsd
-        },
-        {
-            path:'/writemail',
-            component:writemail
-        },
-        {
-          path:'/activemessage',
-          component:activemessage
+            path:'/activemessage',
+            component:activemessage
         },
         {
           path:'/readmessage',
